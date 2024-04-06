@@ -1,0 +1,14 @@
+void _onSceneCreated(VrSceneController sceneController) {
+  final sphere = VrSphere(radius: 50, widthSegments: 20, heightSegments: 20);
+  final material = VrMaterial(color: Colors.blue, isLit: true);
+  final sphereNode = VrNode(geometry: sphere, material: material);
+  sceneController.addNode(sphereNode);
+
+  final camera = VrPerspectiveCamera(
+    fov: 90,
+    aspectRatio: 1,
+    near: 0.1,
+    far: 1000,
+  );
+  sceneController.setCamera(camera);
+}
