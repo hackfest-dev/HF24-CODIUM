@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Human Anatomy VR',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: AnatomyViewer(),
+    );
+  }
+}
+
+class AnatomyViewer extends StatefulWidget {
+  @override
+  _AnatomyViewerState createState() => _AnatomyViewerState();
+}
+
+class _AnatomyViewerState extends State<AnatomyViewer> {
+  // Define variables and Firebase references
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize Firebase references
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Human Anatomy VR'),
+      ),
+      body: Center(
+        // Render 3D model here
+        child: Text('3D Model'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Handle interactions with 3D model
+        },
+        child: Icon(Icons.refresh),
+      ),
+    );
+  }
+}
